@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Award, Target, Eye, Heart, Users, TrendingUp, Shield, Zap, Globe } from "lucide-react"
+import Link from "next/link"
 
 export default function SobrePage() {
   const [isVisible, setIsVisible] = useState(false)
@@ -29,11 +30,13 @@ export default function SobrePage() {
       icon: TrendingUp,
       title: "Experiência e Expertise",
       desc: "Anos de atuação no mercado de telecomunicações, com profundo conhecimento técnico e comercial.",
+      link: "/produtos/internet-fibra",
     },
     {
       icon: Users,
       title: "Parcerias Estratégicas",
       desc: "Acesso às melhores tecnologias e redes através de parcerias com líderes do setor como Vivo, Claro, TIM e outras.",
+      link: "/parceiros",
     },
     {
       icon: Heart,
@@ -49,6 +52,7 @@ export default function SobrePage() {
       icon: Shield,
       title: "Tecnologia de Ponta",
       desc: "Foco em inovação e soluções futuras, mantendo nossos clientes sempre à frente no mercado.",
+      link: "/produtos/cloud",
     },
   ]
 
@@ -250,11 +254,8 @@ export default function SobrePage() {
           </div>
 
           <div className="space-y-8">
-            {benefits.map((benefit, index) => (
-              <Card
-                key={index}
-                className="group hover:shadow-xl transition-all duration-300 border-l-4 border-l-[#00C4CC]"
-              >
+            {benefits.map((benefit, index) => {
+              const CardContentInner = (
                 <CardContent className="p-8">
                   <div className="flex items-start space-x-6">
                     <div className="p-4 rounded-xl bg-gradient-to-r from-[#00C4CC] to-[#1E598F] text-white group-hover:scale-110 transition-transform duration-300">
@@ -266,8 +267,19 @@ export default function SobrePage() {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              );
+              return benefit.link ? (
+                <Link href={benefit.link} key={index}>
+                  <Card className="group hover:shadow-xl transition-all duration-300 border-l-4 border-l-[#00C4CC] cursor-pointer">
+                    {CardContentInner}
+                  </Card>
+                </Link>
+              ) : (
+                <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-l-4 border-l-[#00C4CC]">
+                  {CardContentInner}
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -281,13 +293,17 @@ export default function SobrePage() {
               Descubra como nossa experiência e expertise podem transformar a conectividade da sua empresa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg">Falar com Especialista</Button>
-              <Button
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent"
-              >
-                Solicitar Orçamento
-              </Button>
+              <Link href="/contato">
+                <Button className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg w-full sm:w-auto">Falar com Especialista</Button>
+              </Link>
+              <Link href="/contato">
+                <Button
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent w-full sm:w-auto"
+                >
+                  Solicitar Orçamento
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

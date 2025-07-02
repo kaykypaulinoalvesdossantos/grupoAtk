@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, Smartphone, Zap, Globe, Users, ArrowRight, Signal } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function InternetMovelPage() {
   const [isVisible, setIsVisible] = useState(false)
@@ -142,16 +143,17 @@ export default function InternetMovelPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg group">
-                  Solicitar Orçamento
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent"
-                >
-                  Testar Cobertura
-                </Button>
+                <Link href="/contato">
+                  <Button className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg group">
+                    Solicitar Orçamento
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <Link href="/contato">
+                  <Button className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent">
+                    Testar Cobertura
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -303,13 +305,13 @@ export default function InternetMovelPage() {
                     ))}
                   </ul>
 
-                  <Button
-                    className={`w-full py-6 text-lg ${
-                      plan.popular ? "bg-[#00C4CC] hover:bg-[#00a3aa]" : "bg-[#1E598F] hover:bg-[#0A2342]"
-                    }`}
-                  >
-                    Solicitar Orçamento
-                  </Button>
+                  <Link href="/contato">
+                    <Button
+                      className={`w-full py-6 text-lg ${plan.popular ? "bg-[#00C4CC] hover:bg-[#00a3aa]" : "bg-[#1E598F] hover:bg-[#0A2342]"}`}
+                    >
+                      Solicitar Orçamento
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -353,7 +355,9 @@ export default function InternetMovelPage() {
               como nossa Internet Móvel pode liberar o potencial da sua equipe.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg">Testar Cobertura</Button>
+              <Link href="/contato">
+                <Button className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg">Testar Cobertura</Button>
+              </Link>
               <Button className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent" onClick={() => window.open("https://wa.me/5511959432229", "_blank")}>Falar pelo WhatsApp</Button>
             </div>
           </div>

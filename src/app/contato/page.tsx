@@ -43,10 +43,10 @@ export default function ContatoPage() {
       icon: Mail,
       title: "E-mail",
       description: "Atendimento comercial",
-      contact: "pedro.neto@grupoaki.com.br",
+      contact: "pedro.neto@groupoatk.com.br",
       action: "Enviar E-mail",
       color: "from-purple-500 to-violet-500",
-      onClick: () => window.open("mailto:pedro.neto@grupoaki.com.br"),
+      onClick: () => window.open("mailto:pedro.neto@groupoatk.com.br"),
     },
   ]
 
@@ -305,7 +305,7 @@ export default function ContatoPage() {
                       <Mail className="h-5 w-5 text-[#00C4CC] mr-3 mt-1" />
                       <div>
                         <p className="font-medium">E-mail</p>
-                        <p className="text-gray-700">pedro.neto@grupoaki.com.br</p>
+                        <p className="text-gray-700">pedro.neto@groupoatk.com.br</p>
                       </div>
                     </div>
 

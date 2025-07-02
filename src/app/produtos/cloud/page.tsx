@@ -19,6 +19,7 @@ import {
   Award,
 } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function CloudPage() {
   const [isVisible, setIsVisible] = useState(false)
@@ -189,16 +190,20 @@ export default function CloudPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg group">
-                  Solicitar Orçamento
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent"
-                >
-                  Consultoria Gratuita
-                </Button>
+                <Link href="/contato">
+                  <Button className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg group">
+                    Solicitar Orçamento
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <Link href="/contato">
+                  <Button
+                    variant="outline"
+                    className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent"
+                  >
+                    Consultoria Gratuita
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -300,9 +305,11 @@ export default function CloudPage() {
                       ))}
                     </div>
 
-                    <Button className="w-full bg-[#00C4CC] hover:bg-[#00a3aa] group">
-                      Solicitar Orçamento
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <Button className="w-full bg-[#00C4CC] hover:bg-[#00a3aa] group" asChild>
+                      <Link href="/contato">
+                        Solicitar Orçamento
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -425,15 +432,19 @@ export default function CloudPage() {
               eficiente. Consultoria gratuita e orçamento personalizado!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg">
-                Solicitar Orçamento Personalizado
-              </Button>
-              <Button
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent"
-              >
-                Agendar Consultoria Gratuita
-              </Button>
+              <Link href="/contato">
+                <Button className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg w-full sm:w-auto">
+                  Solicitar Orçamento Personalizado
+                </Button>
+              </Link>
+              <Link href="/contato">
+                <Button
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent w-full sm:w-auto"
+                >
+                  Agendar Consultoria Gratuita
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

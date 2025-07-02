@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Star, Award, Shield, Zap, ArrowRight, Handshake } from "lucide-react"
+import Link from "next/link"
 
 export default function Partners() {
   const [currentPartner, setCurrentPartner] = useState(0)
@@ -19,6 +20,7 @@ export default function Partners() {
       rating: 5,
       highlight: "Maior cobertura 5G do país",
       color: "from-purple-500 to-violet-500",
+      link: "/produtos/internet-fibra",
     },
     {
       name: "Claro Empresas",
@@ -28,6 +30,7 @@ export default function Partners() {
       rating: 5,
       highlight: "Tecnologia de ponta",
       color: "from-red-500 to-pink-500",
+      link: "/produtos/internet-movel",
     },
     {
       name: "Net2Phone",
@@ -37,6 +40,7 @@ export default function Partners() {
       rating: 5,
       highlight: "Comunicação unificada",
       color: "from-blue-500 to-cyan-500",
+      link: "/produtos/pabx-nuvem",
     },
     {
       name: "Hostfiber",
@@ -46,6 +50,7 @@ export default function Partners() {
       rating: 5,
       highlight: "Infraestrutura robusta",
       color: "from-green-500 to-emerald-500",
+      link: "/produtos/cloud",
     },
     {
       name: "TIM Empresas",
@@ -55,6 +60,7 @@ export default function Partners() {
       rating: 5,
       highlight: "Pioneira em 5G",
       color: "from-orange-500 to-yellow-500",
+      link: "/produtos/internet-movel",
     },
     {
       name: "Algar Telecom",
@@ -64,6 +70,7 @@ export default function Partners() {
       rating: 5,
       highlight: "Excelência em atendimento",
       color: "from-indigo-500 to-purple-500",
+      link: "/produtos/link-dedicado",
     },
   ]
 
@@ -150,10 +157,12 @@ export default function Partners() {
                     {partners[currentPartner].highlight}
                   </div>
 
-                  <Button className="bg-gradient-to-r from-[#00C4CC] to-[#1E598F] hover:from-[#00a3aa] hover:to-[#0A2342] text-white group w-fit">
-                    Conhecer Parceria
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  <Link href={partners[currentPartner].link}>
+                    <Button className="bg-gradient-to-r from-[#00C4CC] to-[#1E598F] hover:from-[#00a3aa] hover:to-[#0A2342] text-white group w-fit">
+                      Conhecer Parceria
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
                 </div>
 
                 <div

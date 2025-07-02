@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Handshake, Star, Award, Shield, Zap, Users } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function ParceirosPage() {
   const [isVisible, setIsVisible] = useState(false)
@@ -322,7 +323,7 @@ export default function ParceirosPage() {
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent"
               >
-                Solicitar Orçamento
+                <Link href="/contato">Solicitar Orçamento</Link>
               </Button>
             </div>
           </div>

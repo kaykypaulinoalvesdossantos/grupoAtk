@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import {
   Wifi,
   Smartphone,
@@ -31,6 +32,7 @@ export default function Features() {
       color: "from-blue-500 to-cyan-500",
       stats: "Até 1Gbps",
       benefits: ["Velocidade ultrarrápida", "Estabilidade superior", "Baixa latência", "Suporte dedicado"],
+      link: "/produtos/internet-fibra",
     },
     {
       icon: Smartphone,
@@ -40,6 +42,7 @@ export default function Features() {
       color: "from-green-500 to-emerald-500",
       stats: "Cobertura 5G",
       benefits: ["Mobilidade total", "Tecnologia 5G", "Planos flexíveis", "Gestão centralizada"],
+      link: "/produtos/internet-movel",
     },
     {
       icon: Network,
@@ -49,6 +52,7 @@ export default function Features() {
       color: "from-purple-500 to-violet-500",
       stats: "SLA 99.9%",
       benefits: ["Banda exclusiva", "IP fixo", "SLA garantido", "Monitoramento 24/7"],
+      link: "/produtos/link-dedicado",
     },
     {
       icon: Cloud,
@@ -58,6 +62,7 @@ export default function Features() {
       color: "from-orange-500 to-red-500",
       stats: "99.9% Uptime",
       benefits: ["Backup automático", "Disaster recovery", "Alta disponibilidade", "Segurança avançada"],
+      link: "/produtos/cloud",
     },
   ]
 
@@ -159,10 +164,12 @@ export default function Features() {
                     </div>
                   </div>
 
-                  <Button className="w-full bg-[#00C4CC] hover:bg-[#00a3aa] group">
-                    Saiba Mais
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  <Link href={mainFeatures[activeFeature].link}>
+                    <Button className="w-full bg-[#00C4CC] hover:bg-[#00a3aa] group">
+                      Saiba Mais
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             </div>
@@ -212,17 +219,21 @@ export default function Features() {
                 Fale com nossos especialistas e descubra a solução perfeita para sua empresa.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Falar com Especialista
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent"
-                >
-                  Solicitar Orçamento
-                </Button>
+                <Link href="/contato">
+                  <Button size="lg" className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg w-full sm:w-auto">
+                    <Phone className="mr-2 h-5 w-5" />
+                    Falar com Especialista
+                  </Button>
+                </Link>
+                <Link href="/contato">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent w-full sm:w-auto"
+                  >
+                    Solicitar Orçamento
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

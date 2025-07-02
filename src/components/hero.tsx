@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ChevronRight, Play, Shield, Zap, Users, Award } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -15,18 +16,21 @@ export default function Hero() {
       subtitle: "Internet Fibra Óptica de Alta Performance",
       description: "Velocidade ultrarrápida, estabilidade incomparável e suporte 24/7 para impulsionar sua empresa.",
       image: "/images/futuro.jpg",
+      demoLink: "/produtos/internet-fibra",
     },
     {
       title: "Comunicação Sem Limites",
       subtitle: "PABX em Nuvem e Soluções Móveis",
       description: "Modernize sua comunicação com tecnologia de ponta e mobilidade total para sua equipe.",
       image: "/images/pabx.png",
+      demoLink: "/produtos/pabx-nuvem",
     },
     {
       title: "Infraestrutura de Classe Mundial",
       subtitle: "Links Dedicados e Soluções Cloud",
       description: "Exclusividade, segurança e escalabilidade para empresas que não podem parar.",
       image: "/images/conectaomundo.webp",
+      demoLink: "/produtos/link-dedicado",
     },
   ]
 
@@ -100,21 +104,25 @@ export default function Hero() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-[#00C4CC] to-[#00a3aa] hover:from-[#00a3aa] hover:to-[#008a91] text-white px-6 lg:px-8 py-4 lg:py-6 text-base lg:text-lg font-semibold rounded-xl shadow-2xl hover:shadow-[#00C4CC]/25 transition-all duration-300 group"
-              >
-                Fale Conosco Agora
-                <ChevronRight className="ml-2 h-4 lg:h-5 w-4 lg:w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-white/30 text-white hover:bg-white hover:text-[#0A2342] px-6 lg:px-8 py-4 lg:py-6 text-base lg:text-lg font-semibold rounded-xl backdrop-blur-sm transition-all duration-300 group bg-transparent"
-              >
-                <Play className="mr-2 h-4 lg:h-5 w-4 lg:w-5 group-hover:scale-110 transition-transform" />
-                Ver Demonstração
-              </Button>
+              <Link href="/contato">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-[#00C4CC] to-[#00a3aa] hover:from-[#00a3aa] hover:to-[#008a91] text-white px-6 lg:px-8 py-4 lg:py-6 text-base lg:text-lg font-semibold rounded-xl shadow-2xl hover:shadow-[#00C4CC]/25 transition-all duration-300 group w-full sm:w-auto"
+                >
+                  Fale Conosco Agora
+                  <ChevronRight className="ml-2 h-4 lg:h-5 w-4 lg:w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link href={slides[currentSlide].demoLink}>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-white/30 text-white hover:bg-white hover:text-[#0A2342] px-6 lg:px-8 py-4 lg:py-6 text-base lg:text-lg font-semibold rounded-xl backdrop-blur-sm transition-all duration-300 group bg-transparent w-full sm:w-auto"
+                >
+                  <Play className="mr-2 h-4 lg:h-5 w-4 lg:w-5 group-hover:scale-110 transition-transform" />
+                  Ver Demonstração
+                </Button>
+              </Link>
             </div>
 
             {/* Trust Indicators */}

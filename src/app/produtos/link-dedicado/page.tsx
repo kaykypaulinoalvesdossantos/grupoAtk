@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, Network, Shield, Zap, Users, ArrowRight, Award } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function LinkDedicadoPage() {
   const [isVisible, setIsVisible] = useState(false)
@@ -108,16 +109,20 @@ export default function LinkDedicadoPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg group">
-                  Solicitar Orçamento
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent"
-                >
-                  Falar com Especialista
-                </Button>
+                <Link href="/contato">
+                  <Button className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg group">
+                    Solicitar Orçamento
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <Link href="/contato">
+                  <Button
+                    variant="outline"
+                    className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent"
+                  >
+                    Falar com Especialista
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -247,12 +252,14 @@ export default function LinkDedicadoPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg" onClick={() => window.open("https://wa.me/5511959432229", "_blank")}>Falar pelo WhatsApp</Button>
-              <Button
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent"
-              >
-                Solicitar Orçamento
-              </Button>
+              <Link href="/contato">
+                <Button
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent"
+                >
+                  Solicitar Orçamento
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

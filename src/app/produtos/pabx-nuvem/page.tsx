@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, Phone, Cloud, Users, Settings, ArrowRight, Headphones } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function PabxNuvemPage() {
   const [isVisible, setIsVisible] = useState(false)
@@ -96,16 +97,20 @@ export default function PabxNuvemPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg group">
-                  Teste Grátis por 30 Dias
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent"
-                >
-                  Ver Demonstração
-                </Button>
+                <Link href="/contato">
+                  <Button className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg group w-full sm:w-auto">
+                    Teste Grátis por 30 Dias
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <Link href="/contato">
+                  <Button
+                    variant="outline"
+                    className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent w-full sm:w-auto"
+                  >
+                    Ver Demonstração
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -265,13 +270,17 @@ export default function PabxNuvemPage() {
               empresa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg">Iniciar Teste Grátis</Button>
-              <Button
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent"
-              >
-                Agendar Demonstração
-              </Button>
+              <Link href="/contato">
+                <Button className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg">Iniciar Teste Grátis</Button>
+              </Link>
+              <Link href="/contato">
+                <Button
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-[#0A2342] px-8 py-6 text-lg bg-transparent"
+                >
+                  Agendar Demonstração
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
