@@ -11,7 +11,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/5519998809797", "_blank")
+    window.open("https://wa.me/5511959432229", "_blank")
   }
 
   return (

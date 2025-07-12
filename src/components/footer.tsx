@@ -111,10 +111,10 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Grupo ATK. Todos os direitos reservados.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <Link href="/politica-privacidade" className="text-gray-400 hover:text-[#00C4CC] text-sm">
+            <Link href="" className="text-gray-400 hover:text-[#00C4CC] text-sm">
               Política de Privacidade
             </Link>
-            <Link href="/termos-uso" className="text-gray-400 hover:text-[#00C4CC] text-sm">
+            <Link href="" className="text-gray-400 hover:text-[#00C4CC] text-sm">
               Termos de Uso
             </Link>
           </div>

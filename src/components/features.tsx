@@ -219,7 +219,7 @@ export default function Features() {
                 Fale com nossos especialistas e descubra a solução perfeita para sua empresa.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contato">
+                <Link href="https://wa.me/5511959432229" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="bg-[#00C4CC] hover:bg-[#00a3aa] px-8 py-6 text-lg w-full sm:w-auto">
                     <Phone className="mr-2 h-5 w-5" />
                     Falar com Especialista
